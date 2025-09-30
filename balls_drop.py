@@ -34,6 +34,13 @@ class Ball:
         self.image = load_image('ball21x21.png')
         self.x, self.y = random.randint(100, 700), 150
 
+
+
+
+
+
+
+    def update(self):
     def reset_world():
         global running
         global world
