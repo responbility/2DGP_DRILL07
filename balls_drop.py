@@ -40,7 +40,6 @@ class Ball:
 
 
 
-    def update(self):
     def reset_world():
         global running
         global world
