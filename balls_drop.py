@@ -1,7 +1,8 @@
 import random
 from pico2d import *
 
-
+running = True
+world = []
 
 class   Grass:
     def __init__(self):
@@ -30,15 +31,8 @@ class Boy:
 
 class Ball:
     def __init__(self):
-         self.image= load_image()('ball21x21.png')
+        self.image = load_image('ball21x21.png')
         self.x, self.y = random.randint(100, 700), 150
-
-    def draw(self):
-        self.image.draw(self.x, self.y)
-
-    def update(self):
-        pass
-
 
     def reset_world():
         global running
@@ -57,14 +51,17 @@ class Ball:
         world.append(ball)
 
     def update_world():
+        grass.update()
         for o in world:
             o.update()
+        ball.update()
 
     def render_world():
         clear_canvas()
         grass.draw()
         for boy in team:
             boy.drawO()
+            boy.draw()
         update_canvas()
 
 
